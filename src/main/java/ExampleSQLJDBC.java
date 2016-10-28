@@ -24,14 +24,15 @@ public class ExampleSQLJDBC {
         String dbName = props.getProperty("DB_NAME");
         String user = props.getProperty("USER");
         String password = props.getProperty("PASSWORD");
+        String isToEncrypt = props.getProperty("ENCRYPT");
 
         String url = String.format("jdbc:sqlserver://%s.database.windows.net:1433;" +
                 "database=%s;" +
                 "user=%s;" +
                 "password=%s;" +
-                "encrypt=true;" +
+                "encrypt=%s;" +
                 "hostNameInCertificate=*.database.windows.net;" +
-                "loginTimeout=30;", hostName, dbName, user, password);
+                "loginTimeout=30;", hostName, dbName, user, password, isToEncrypt);
 
         System.out.println(url);
 
